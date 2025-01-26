@@ -4,6 +4,7 @@ import { AppDispatch } from "../../store";
 import { fetchProducts, selectProducts } from "../../store/productSlice";
 import ProductTile from "../../Components/ProductTile/ProductTile";
 import Filters from "../../Components/Filters/Filters";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Home = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -40,15 +41,23 @@ const Home = () => {
 
   return (
     <div className="d-flex flex-column align-items-center p-2">
-      {loading && products.length === 0 && <p>Loading...</p>}
+      {loading && products.length === 0 && (
+        <div className="loader-container">
+          <CircularProgress />
+        </div>
+      )}
       {error && <p>{error}</p>}
-      <Filters />
+      {!loading && <Filters />}
       <div className="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {products.map((product, index) => (
           <ProductTile key={`${product.id}-${index}`} product={product} />
         ))}
       </div>
-      {loading && products.length > 0 && <p>Loading more...</p>}
+      {loading && products.length > 0 && (
+        <div className="loader-container">
+          <CircularProgress size={24} />
+        </div>
+      )}
     </div>
   );
 };
