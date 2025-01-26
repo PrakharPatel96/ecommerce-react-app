@@ -131,19 +131,23 @@ src/
 
 ## Future Enhancements
 
-1. Authentication
+1. Image Optimizations and Lazy Loading
+
+When alloted more time, would add image optimizations and more lazy loading.
+
+2. Authentication
 
 Add user login and registration features.
 
-2. Cart Functionality
+3. Cart Functionality
 
 Implement shopping cart with add/remove item functionality.
 
-3. Backend Integration
+4. Backend Integration
 
 Replace the mock API with a real backend service.
 
-4. Testing
+5. Testing
 
 Add unit and integration tests for critical components.
 
