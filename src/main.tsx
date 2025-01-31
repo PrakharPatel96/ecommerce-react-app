@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <Router basename="/">
+  <Router basename="/ecommerce-react-app">
     <Provider store={store}>
       <App />
     </Provider>
