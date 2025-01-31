@@ -9,9 +9,10 @@ function App() {
       <div className="h-100 w-100">
         <Routes>
           {/* Landing Page */}
-          <Route path="/" element={<Home />} />
+          <Route path="" element={<Home />} /> {/* Remove leading "/" */}
           {/* Product Details */}
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="product/:id" element={<ProductDetails />} />{" "}
+          {/* Remove leading "/" */}
         </Routes>
       </div>
     </>
